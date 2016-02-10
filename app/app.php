@@ -15,7 +15,17 @@
     $app->get('/', function() use ($app) {
         return $app['twig']->render('index.html.twig', array('job'=>Job::getAll()));
     });
-    
+
+    $app->post('/job_list', function() use ($app) {
+        $job = new Job($_POST['inputTitle'], $_POST['inputCompany'], $_POST['inputDescription']);
+        $job->saveJob();
+        return $app['twig']->render('job_list.html.twig', array('newjob'=> $job));
+    });
+
+    $app->get('/resume', function() use ($app) {
+        return $app['twig']->render('resume.html.twig', array('jobs'=>Job::getAll()));
+    });
+
     return $app;
 
  ?>

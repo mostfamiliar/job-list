@@ -1,0 +1,19 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Your resume</title>
+    </head>
+    <body>
+     <h1>Your resume</h1>
+
+     {% if jobs is not empty%}
+        <ul>
+            {% for job in jobs %}
+                <li> <strong>{{job.getTitle}}</strong> , <em>{{job.getCompany}}</em>, {{job.getdescription}} </li>
+            {% endfor %}
+        </ul>
+     {% endif %}
+
+    </body>
+</html>
