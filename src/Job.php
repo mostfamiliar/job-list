@@ -41,6 +41,10 @@
     static function getAll() {
         return $_SESSION['list_of_jobs'];
     }
+
+    static function deleteAll() {
+        $_SESSION['list_of_jobs'] = array();
+    }
 }
 
 ?>

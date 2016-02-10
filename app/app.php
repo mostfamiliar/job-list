@@ -26,6 +26,10 @@
         return $app['twig']->render('resume.html.twig', array('jobs'=>Job::getAll()));
     });
 
+    $app->post('/delete_jobs', function() use ($app){
+        Job::deleteAll();
+        return $app['twig']->render('unemployed.html.twig');
+    });
     return $app;
 
  ?>

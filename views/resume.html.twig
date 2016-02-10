@@ -15,5 +15,14 @@
         </ul>
      {% endif %}
 
+     {% if jobs is empty %}
+        <h1> GET A JOB, HIPPIE!</h1>
+     {% endif %}
+
+     <a href="/">Add more jobs?</a>
+     <form action="/delete_jobs" method="post">
+         <button type="submit" class="btn-danger">Hide your history from the CIA</button>
+     </form>
+
     </body>
 </html>
